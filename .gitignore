@@ -2,6 +2,6 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-/vsP_dataprint/.vs/vsP_dataprint
+/vsP_dataprint/.vs/vsP_dataprint/v17
 /vsP_dataprint/x64/Debug
 /vsP_count/.vs/vsP_count/v17
