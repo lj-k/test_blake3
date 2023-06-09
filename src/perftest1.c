@@ -74,23 +74,27 @@ int main(void) {
       count_clear();
 
   // blake3 performance test: count
-      printf("input Bytes; compress_in_place;hash_many;M21;M216;M41;M416;M81;M816;M161;M1616;ipCS;ipCE;ipPARENT\n");
-      for (int j = 0; j < t2_casenum; j++)
+      //printf("input Bytes; compress_in_place;hash_many;M21;M216;M41;M416;M81;M816;M161;M1616;ipCS;ipCE;ipPARENT\n");
+      printf("input Block; compress_in_place;hash_many;M11;M116;M21;M216;M41;M416;M81;M816;M161;M1616;ipCS;ipCE;ipPARENT;ipROOT;ipKH;ipDKC;ipDKM;\n");
+      //for (int j = 0; j < t2_casenum; j++)
+      for (int j = 0; j < 1025; j++)
+
       {
           start = clock();
           for (int i = 0; i < t1_times; i++)          {
               blake3_hasher_init(&hasher);
-              blake3_hasher_update(&hasher, buf, t2_inputlen[j]);
+              //blake3_hasher_update(&hasher, buf, t2_inputlen[j]);
+              blake3_hasher_update(&hasher, buf, 64*j*32+31);
+
               blake3_hasher_finalize(&hasher, output, TEST_BLAKE3_OOOUT_LEN);
           }
 
           end = clock();
-          t2[j] = (double)(end-start) / CLK_TCK;    // convert to seconds
+          //t2[j] = (double)(end-start) / CLK_TCK;    // convert to seconds
 
-          printf_s("%7d;\t", t2_inputlen[j]);
+          printf_s("%7d;\t", j);
           count_print();
           count_clear();
-          printf("\n");
           printf("\n");
 
       }

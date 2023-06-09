@@ -13,7 +13,7 @@ void count_print()
 	
 	printf("%3d;%4d;", count_blake3_compress_in_place,count_blake3_hash_many);
 	printf("\t");// hash many numbers
-	//printf("%4d;\%4d;", count_blake3_hash_many_situation[1][1], count_blake3_hash_many_situation[1][16]);
+	printf("%4d;\%4d;", count_blake3_hash_many_situation[1][1], count_blake3_hash_many_situation[1][16]);
 	printf("%4d;%4d;", count_blake3_hash_many_situation[2][1], count_blake3_hash_many_situation[2][16]);
 	printf("%4d;%4d;", count_blake3_hash_many_situation[4][1], count_blake3_hash_many_situation[4][16]);
 	printf("%4d;%4d;", count_blake3_hash_many_situation[8][1], count_blake3_hash_many_situation[8][16]);

@@ -51,6 +51,6 @@ void blake3_hash_many(const uint8_t *const *inputs, size_t num_inputs,
 }
 
 size_t blake3_simd_degree(void) {
-    return 1;
+    return 4;
 }
 
