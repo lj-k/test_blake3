@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\blake3.c" />
-    <ClCompile Include="..\src\blake3_dispatch.c" />
+    <ClCompile Include="..\src\blake3_dispatch_dataprint.c" />
     <ClCompile Include="..\src\blake3_portable.c" />
     <ClCompile Include="..\src\perfocunt.c" />
     <ClCompile Include="..\src\test1.c" />

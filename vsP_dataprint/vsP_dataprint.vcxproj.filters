@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\blake3_dispatch.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\blake3_portable.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -28,6 +25,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\src\blake3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\blake3_dispatch_dataprint.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
