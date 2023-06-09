@@ -214,5 +214,4 @@ void blake3_hash_many_portable(const uint8_t *const *inputs, size_t num_inputs,
 
 
 
-
 #endif /* BLAKE3_IMPL_H */
