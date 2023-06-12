@@ -53,58 +53,11 @@ int main()
 {
     const uint8_t* const* inputs[4] = { &data[0],&data[64],&data[128],&data[192] };
 
-    
 
-    uint8_t* message = inputs[0];
-
-    printf("\n## blake3_hash_many  (M%d%d):\n", (int)num_inputs, (int)blocks);
-
-    printf("\tsize_t num_inputs=%llu, \n\tsize_t blocks=%llu,\n\tuint64_t counter=%llu \n", num_inputs, blocks, counter);
-    printf("\tbool increment_counter=%d, \n\tuint8_t flags=%x,\n\tuint8_t flags_start=%x,\n\tuint8_t flags_end=%x \n", increment_counter, flags, flags_start, flags_end);
-
-
-    printf("\n### input message: [0~%d]\n", 64 * (int)blocks * (int)num_inputs - 1);
-    int j = 0;
-    int chunknum = 1;
-    int newlinecount = 0;
-    printf("\n####  Parallel %d\n", chunknum);
-
-    //for (int i = 0; i < BLAKE3_CHUNK_LEN * num_inputs; i++)
-    for (int i = 0; i < blocks * num_inputs * 64; i++)
-    {
-        printf("%02x,", message[i]);
-        j++;
-        if (j == 64 * blocks) {
-            j = 0;
-            chunknum++;
-            if (i < blocks * num_inputs * 64 - 1) {
-                printf("\n\n#### Parallel %d", chunknum);
-            }
-
-        }
-        newlinecount++;
-        if (newlinecount == 16) {
-            newlinecount = 0;
-            printf("\n");
-        }
-
-    }
-
-    printf("\n### input key: [0~7]\n");
-    for (int i = 0; i < 7; i++) {
-        printf(" % 02X,", key[i]);
-    }
-    printf("\n");
     
   blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
                            increment_counter, flags, flags_start, flags_end,
                            out);
-  
-  for (int i = 0; i < NUM_inputs*32; i++)
-  {
-      printf("%02X,", out[i]);
-      if ((i + 1) % 32 == 0) { printf("\n"); }
-  }
 
     return 0;
 }
