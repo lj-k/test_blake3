@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\blake3_portable.c" />
-    <ClCompile Include="..\src\perftest_module.c" />
+    <ClCompile Include="..\src\perftest_module_many.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\blake3.h" />

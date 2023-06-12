@@ -18,7 +18,7 @@
     <ClCompile Include="..\src\blake3_portable.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\perftest_module.c">
+    <ClCompile Include="..\src\perftest_module_many.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
