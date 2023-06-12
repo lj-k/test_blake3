@@ -8,7 +8,7 @@
 #include <process.h>
 #include <time.h>
 
-#define TEST_BLAKE3_INPUT_LEN 2048
+#define TEST_BLAKE3_INPUT_LEN 65536
 #define TEST_BLAKE3_OOOUT_LEN 32
 
 

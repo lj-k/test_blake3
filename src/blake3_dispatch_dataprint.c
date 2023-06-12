@@ -124,7 +124,7 @@ void blake3_hash_many(const uint8_t *const *inputs, size_t num_inputs,
     printf("\tbool increment_counter=%d, \n\tuint8_t flags=%x,\n\tuint8_t flags_start=%x,\n\tuint8_t flags_end=%x \n", increment_counter, flags, flags_start, flags_end);
 
 
-    printf("\n### input message: [0~%d]\n", (int)BLAKE3_CHUNK_LEN * (int)num_inputs - 1);
+    printf("\n### input message: [0~%d]\n", 64*(int)blocks * (int)num_inputs - 1);
     int j=0;
     int chunknum = 1;
     int newlinecount = 0;
@@ -152,7 +152,7 @@ void blake3_hash_many(const uint8_t *const *inputs, size_t num_inputs,
     }
 
     printf("\n### input key: [0~7]\n");
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 8; i++) {
         printf(" % 02X,", key[i]);
     }
     printf("\n");
@@ -178,6 +178,6 @@ void blake3_hash_many(const uint8_t *const *inputs, size_t num_inputs,
 }
 
 size_t blake3_simd_degree(void) {
-    return 2;
+    return 16;
 }
 
