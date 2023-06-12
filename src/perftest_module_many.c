@@ -11,8 +11,8 @@
 
 #include "blake3_impl.h"
 
-#define NUM_inputs 2
-#define NUM_blocks 1
+#define NUM_inputs 1
+#define NUM_blocks 16
 
 
 #define PRINTF_ON 0// printf input 
@@ -20,7 +20,7 @@
 
 
 #define TEST_TIME
-#define TIME_TEST_NUM 10000000
+#define TIME_TEST_NUM 1000000000
 #ifdef TEST_TIME
     #include <time.h>
     
@@ -2277,9 +2277,9 @@ int main()
     }
     end = clock();
     //printf("end %d;", end);
-
+    
     timecost= (end - start);
-    printf("run %d times: cost %f total %f ns per;\n", TIME_TEST_NUM, timecost,timecost/ TIME_TEST_NUM*1000);
+    printf("M %d%d: run %d times: cost %f total %f ns per;\n", NUM_inputs, NUM_blocks, TIME_TEST_NUM, timecost,timecost/ TIME_TEST_NUM*1000);
 #endif //TEST_TIME
 #if PRIOUT_ON
   for (int i = 0; i < NUM_inputs*32; i++)
