@@ -12,13 +12,13 @@
 #include "blake3_impl.h"
 
 
-#define TEST_INPLACE 1
-#define TEST_XOF     0
+#define TEST_INPLACE 0
+#define TEST_XOF     1
 
-#define PRINTF_ON 1// printf input 
-#define PRIOUT_ON 1//printf output
+#define PRINTF_ON 0// printf input 
+#define PRIOUT_ON 0//printf output
 
-//#define TEST_TIME
+#define TEST_TIME
 #define TIME_TEST_NUM 1000000000
 
 /********************** configure above **************/
