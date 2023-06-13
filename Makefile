@@ -3,7 +3,8 @@
 SWITCH_PRINT=-DPRINTF_ON=1 -DPRIOUT_ON=1
 SWITCH_TIMETEST= -DTIME_TEST_NUM=1000000000 #-DTEST_TIME
 
-#MNUM=M21
+# configure more above
+#use MNUM=M21 as `make gccmany MNUM=M216`
 ###########################
 SRC_PATH=src/
 EXE_PATH=gccP/
