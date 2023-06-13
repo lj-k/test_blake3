@@ -14,3 +14,4 @@
 ~$*.xlsx
 /vsP_testmodule/x64/Release
 /vsP_test_xof_inp/.vs/vsP_test_xof_inp/v17
+/vsP_test_xof_inp/x64/Release
