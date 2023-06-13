@@ -10,17 +10,19 @@
 #include <stdio.h>
 
 #include "blake3_impl.h"
+#ifndef USEGCCDF
 
-#define NUM_inputs 2
-#define NUM_blocks 16
-
-
-#define PRINTF_ON 0// printf input 
-#define PRIOUT_ON 0//printf output
+    #define NUM_inputs 2
+    #define NUM_blocks 16
 
 
-#define TEST_TIME
-#define TIME_TEST_NUM 1000000000
+    #define PRINTF_ON 1// printf input 
+    #define PRIOUT_ON 1//printf output
+
+
+    //#define TEST_TIME
+    #define TIME_TEST_NUM 1000000000
+#endif
 #ifdef TEST_TIME
     #include <time.h>
     

@@ -11,15 +11,18 @@
 
 #include "blake3_impl.h"
 
+#ifndef USEGCCDF
+    #define TEST_INPLACE 0
+    #define TEST_XOF     1
 
-#define TEST_INPLACE 0
-#define TEST_XOF     1
+    #define PRINTF_ON 0// printf input 
+    #define PRIOUT_ON 0//printf output
 
-#define PRINTF_ON 0// printf input 
-#define PRIOUT_ON 0//printf output
+    #define TEST_TIME
+    #define TIME_TEST_NUM 1000000000
+#endif // !USEGCCDF
 
-#define TEST_TIME
-#define TIME_TEST_NUM 1000000000
+
 
 /********************** configure above **************/
 #ifdef TEST_TIME
