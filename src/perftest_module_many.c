@@ -11,7 +11,7 @@
 
 #include "blake3_impl.h"
 
-#define NUM_inputs 1
+#define NUM_inputs 2
 #define NUM_blocks 16
 
 
