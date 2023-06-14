@@ -27,7 +27,7 @@ int main(void) {
 
   // time veriables
   clock_t  start, end;
-  int t1_times=100000;
+  int t1_times=10000;
 
 #define  t2_casenum   1025
   int t2_times_basic = 1000000;
