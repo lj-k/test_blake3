@@ -67,7 +67,7 @@ int main(void) {
 
   // blake3 performance test: count
       //printf("input Bytes; compress_in_place;hash_many;M21;M216;M41;M416;M81;M816;M161;M1616;ipCS;ipCE;ipPARENT\n");
-      printf("input Block; costtimes(ms);\n");
+      printf("input Block; costtimes(us);\n");
       for (int j = 0; j < t2_casenum; j++)
       //for (int j = 0; j < 1025; j++)
 
