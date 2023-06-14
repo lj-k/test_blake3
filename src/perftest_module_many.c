@@ -13,7 +13,7 @@
 #ifndef USEGCCDF
 
     #define NUM_inputs 2
-    #define NUM_blocks 16
+    #define NUM_blocks 1
 
 
     #define PRINTF_ON 1// printf input 

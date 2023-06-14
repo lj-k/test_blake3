@@ -191,6 +191,7 @@
     <ClCompile Include="..\src\perftest_module_many.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\arrayprint.h" />
     <ClInclude Include="..\src\blake3.h" />
     <ClInclude Include="..\src\blake3_impl.h" />
   </ItemGroup>
