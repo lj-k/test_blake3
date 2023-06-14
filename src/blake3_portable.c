@@ -1,6 +1,5 @@
 #include "blake3_impl.h"
 #include <string.h>
-#include "arrayprint.h"
 
 INLINE uint32_t rotr32(uint32_t w, uint32_t c) {
   return (w >> c) | (w << (32 - c));
@@ -72,14 +71,14 @@ INLINE void compress_pre(uint32_t state[16], const uint32_t cv[8],
   state[13] = counter_high(counter);
   state[14] = (uint32_t)block_len;
   state[15] = (uint32_t)flags;
-  print_compress_pre_inputs(cv, block, block_len, counter, flags, block_words, state);
-  round_fn(state, &block_words[0], 0); print_state16(state,0);
-  round_fn(state, &block_words[0], 1); print_state16(state,1);
-  round_fn(state, &block_words[0], 2); print_state16(state,2);
-  round_fn(state, &block_words[0], 3); print_state16(state,3);
-  round_fn(state, &block_words[0], 4); print_state16(state,4);
-  round_fn(state, &block_words[0], 5); print_state16(state,5);
-  round_fn(state, &block_words[0], 6); print_state16(state,6);
+
+  round_fn(state, &block_words[0], 0);
+  round_fn(state, &block_words[0], 1);
+  round_fn(state, &block_words[0], 2);
+  round_fn(state, &block_words[0], 3);
+  round_fn(state, &block_words[0], 4);
+  round_fn(state, &block_words[0], 5);
+  round_fn(state, &block_words[0], 6);
 }
 
 void blake3_compress_in_place_portable(uint32_t cv[8],
@@ -95,7 +94,7 @@ void blake3_compress_in_place_portable(uint32_t cv[8],
   cv[4] = state[4] ^ state[12];
   cv[5] = state[5] ^ state[13];
   cv[6] = state[6] ^ state[14];
-  cv[7] = state[7] ^ state[15]; print_xor_state2cv(state, cv);
+  cv[7] = state[7] ^ state[15];
 }
 
 void blake3_compress_xof_portable(const uint32_t cv[8],
