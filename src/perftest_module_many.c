@@ -2276,7 +2276,7 @@ int main()
                         printf("\nblake3_hash_many_avx512\n");
                 #endif //PRIOUT_ON
 
-            blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
+            blake3_hash_many_avx512(inputs, num_inputs, blocks, key, counter,
                 increment_counter, flags, flags_start, flags_end,
                 out);
         #elif TEST_USE_NEON==1
