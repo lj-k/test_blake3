@@ -7,11 +7,13 @@ C_DEF_SWITCH_TIMETEST= -DTIME_TEST_NUM=1000000000 #-DTEST_TIME
 #parameters used in make
 # MNUM = M21 M41 M81 M161 M116 M216 M416 M816 M1616
 # PLT  = AVX512 NEON RVV PORT
+
 #example
-#use MNUM=M216 as `make gccmany MNUM=M216`
 #use MNUM=M216 in avx512 as `make gccmany MNUM=M216 PLT=AVX512`
-#use MNUM=M216 in avx512 as `make gccmany MNUM=M216 PLT=AVX512`
-#make runmanyall PLT=AVX512
+#                           `make run PLT=AVX512 MNUM=M216`
+#make and run all in avx512 as `make gccmanyall PLT=AVX512`
+#								`make runall PLT=AVX512`
+#
 ###########################
 SRC_PATH=src/
 EXE_PATH=gccP/
