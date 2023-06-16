@@ -2271,10 +2271,18 @@ int main()
 
 #endif //TEST_TIME
 
+        #if TEST_USE_AVX512 ==1
+            blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
+                increment_counter, flags, flags_start, flags_end,
+                out);
+        #elif TEST_USE_NEON==1
+        #elif TEST_USE_RVV==1
+        #else
+            blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
+                increment_counter, flags, flags_start, flags_end,
+                out);
+        #endif
 
-        blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
-            increment_counter, flags, flags_start, flags_end,
-            out);
 #ifdef TEST_TIME
     }
     end = clock();
