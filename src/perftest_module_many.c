@@ -2272,12 +2272,20 @@ int main()
 #endif //TEST_TIME
 
         #if TEST_USE_AVX512 ==1
+                #if PRIOUT_ON
+                        printf("\nblake3_hash_many_avx512\n");
+                #endif //PRIOUT_ON
+
             blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
                 increment_counter, flags, flags_start, flags_end,
                 out);
         #elif TEST_USE_NEON==1
         #elif TEST_USE_RVV==1
         #else
+                #if PRIOUT_ON
+                    printf("\blake3_hash_many_portable\n");
+                #endif //PRIOUT_ON
+
             blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
                 increment_counter, flags, flags_start, flags_end,
                 out);
@@ -2292,6 +2300,7 @@ int main()
     printf("M %d%d: run %d times: cost %f total %f ns per;\n", NUM_inputs, NUM_blocks, TIME_TEST_NUM, timecost,timecost/ TIME_TEST_NUM*1000);
 #endif //TEST_TIME
 #if PRIOUT_ON
+    printf("\n### output out: [0~%d]\n",NUM_inputs*32);
   for (int i = 0; i < NUM_inputs*32; i++)
   {
       printf("%02X,", out[i]);
