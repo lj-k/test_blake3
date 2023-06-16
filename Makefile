@@ -119,7 +119,7 @@ runall:
 
 .PHONY:run
 run:
-	./$(EXE_PATH)test
+	./$(EXE_PATH)test_$(PLT)_$(MNUM)
 
 .PHONY:clean
 clean:
