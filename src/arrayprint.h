@@ -65,6 +65,7 @@ void print_matrix_uint32_HEX(uint32_t* data, int number, int indent) {
     }
 }
 
+///////// print specifically 
 //print_xor_state2cv(state, cv);
 void print_xor_state2cv(uint32_t state[16], uint32_t cv[8]) {
     printf("#### xor in blake3_compress_in_place_portable:\n");
@@ -92,7 +93,15 @@ void print_compress_pre_inputs( uint32_t cv[8],
 
 }
 
-//print_state16(state);
+//print_state16(state, round);
+//
+// print_state16(state, 0);
+// print_state16(state, 1);
+// print_state16(state, 2);
+// print_state16(state, 3);
+// print_state16(state, 4);
+// print_state16(state, 5);
+// print_state16(state, 6);
 void print_state16(uint32_t* state,int round) {
     int indent = 1;
 

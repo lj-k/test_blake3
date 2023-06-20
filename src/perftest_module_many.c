@@ -12,7 +12,7 @@
 #include "blake3_impl.h"
 #ifndef USEGCCDF
 
-    #define NUM_inputs 2
+    #define NUM_inputs 4
     #define NUM_blocks 1
 
 
@@ -2273,7 +2273,7 @@ int main()
 
         #if TEST_USE_AVX512 ==1
                 #if PRIOUT_ON
-                        printf("\nblake3_hash_many_avx512\n");
+                        printf("\n blake3_hash_many_avx512\n");
                 #endif //PRIOUT_ON
 
             blake3_hash_many_avx512(inputs, num_inputs, blocks, key, counter,
@@ -2283,7 +2283,7 @@ int main()
         #elif TEST_USE_RVV==1
         #else
                 #if PRIOUT_ON
-                    printf("\blake3_hash_many_portable\n");
+                    printf("\n blake3_hash_many_portable\n");
                 #endif //PRIOUT_ON
 
             blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
