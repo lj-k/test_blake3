@@ -32,5 +32,8 @@
     <ClInclude Include="..\src\arrayprint.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\inputdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

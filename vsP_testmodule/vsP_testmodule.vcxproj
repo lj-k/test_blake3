@@ -194,6 +194,7 @@
     <ClInclude Include="..\src\arrayprint.h" />
     <ClInclude Include="..\src\blake3.h" />
     <ClInclude Include="..\src\blake3_impl.h" />
+    <ClInclude Include="..\src\inputdata.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
